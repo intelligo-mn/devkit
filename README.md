@@ -1,16 +1,21 @@
-# memorizeflutter
+# Memorize
 
-Memorize Flutter application.
+Japanese-English-Mongolian dictionary. It lets you find words, kanji and more quickly and easily.
 
-## Getting Started
+## Contributors
 
-This project is a starting point for a Flutter application.
+You may contribute in several ways like creating new features, fixing bugs, improving documentation and examples
+or translating any document here to your language. [Find more information in CONTRIBUTING.md](CONTRIBUTING.md).
+<a href="https://github.com/opengineer/memorize-flutter/graphs/contributors">Contributors</a>
 
-A few resources to get you started if this is your first Flutter project:
+## License
 
-- [Lab: Write your first Flutter app](https://flutter.io/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.io/docs/cookbook)
+Memorize is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.io/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+
+> Copyright (C) 2019 Opengineer.
+> Memorize is open-sourced software licensed under the [MIT](https://opensource.org/licenses/MIT) license.
+> (See the [LICENSE](https://github.com/opengineer/memorize-flutter/blob/master/LICENSE) file for the whole license text.)
+
+**[⬆ back to top](#memorize)**
+
