@@ -24,6 +24,12 @@
       ],
       "image-viewer/*": [
         "dist/image-viewer/*"
+      ],
+      "stepper": [
+        "dist/stepper"
+      ],
+      "stepper/*": [
+        "dist/stepper/*"
       ]
     }
   },

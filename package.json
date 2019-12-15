@@ -7,7 +7,10 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "publish:image-viewer": "npm publish dist/image-viewer",
+    "publish:stepper": "npm publish dist/image-viewer",
+    "publish:multi-select": "npm publish dist/image-viewer"
   },
   "private": true,
   "dependencies": {
