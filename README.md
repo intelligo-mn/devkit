@@ -6,9 +6,9 @@ Components and libraries for Angular.
 
 Component           | Version
 ------------------- | -----------------------------------------------------------------------------------------------------------------
-@devmn/image-viewer | [![npm version](https://badgen.net/npm/v/@devmn/image-viewer)](https://www.npmjs.com/package/@devmn/image-viewer)
-@devmn/multi-select | [![npm version](https://badgen.net/npm/v/@devmn/multi-select)](https://www.npmjs.com/package/@devmn/multi-select)
-@devmn/stepper      | [![npm version](https://badgen.net/npm/v/@devmn/stepper)](https://www.npmjs.com/package/@devmn/stepper)
+[@devmn/image-viewer](https://github.com/intelligo-systems/ngx/tree/master/projects/image-viewer) | [![npm version](https://badgen.net/npm/v/@devmn/image-viewer)](https://www.npmjs.com/package/@devmn/image-viewer)
+[@devmn/multi-select](https://github.com/intelligo-systems/ngx/tree/master/projects/multi-select) | [![npm version](https://badgen.net/npm/v/@devmn/multi-select)](https://www.npmjs.com/package/@devmn/multi-select)
+[@devmn/stepper](https://github.com/intelligo-systems/ngx/tree/master/projects/stepper)      | [![npm version](https://badgen.net/npm/v/@devmn/stepper)](https://www.npmjs.com/package/@devmn/stepper)
 
 ## Stay In Touch
 
