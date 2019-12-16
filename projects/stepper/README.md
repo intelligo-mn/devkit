@@ -1,24 +1,29 @@
-# Stepper
+# Ngx
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.14.
+Components and libraries for Angular.
 
-## Code scaffolding
+## Components
 
-Run `ng generate component component-name --project stepper` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project stepper`.
-> Note: Don't forget to add `--project stepper` or else it will be added to the default project in your `angular.json` file. 
+Component           | Version
+------------------- | -----------------------------------------------------------------------------------------------------------------
+@devmn/image-viewer | [![npm version](https://badgen.net/npm/v/@devmn/image-viewer)](https://www.npmjs.com/package/@devmn/image-viewer)
+@devmn/multi-select | [![npm version](https://badgen.net/npm/v/@devmn/multi-select)](https://www.npmjs.com/package/@devmn/multi-select)
+@devmn/stepper      | [![npm version](https://badgen.net/npm/v/@devmn/stepper)](https://www.npmjs.com/package/@devmn/stepper)
 
-## Build
+## Stay In Touch
 
-Run `ng build stepper` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Blogging at [Medium](https://medium.com/intelligo-systems)
+- Chatting on [Slack](https://slack.intelligo.systems/)
 
-## Publishing
+## Contributors
 
-After building your library with `ng build stepper`, go to the dist folder `cd dist/stepper` and run `npm publish`.
+- 📥 Pull requests and 🌟 Stars are always welcome. 
+- You may contribute in several ways like creating new features, fixing bugs, improving documentation and examples
+or translating any document here to your language. [Find more information in CONTRIBUTING.md](CONTRIBUTING.md).
+<a href="https://github.com/intelligo-systems/ngx/graphs/contributors">Contributors</a>
 
-## Running unit tests
+## License
 
-Run `ng test stepper` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+> Copyright (C) 2019 Intelligo Systems.<br>
+> Chatbots.mn licensed under the [INTELLIGO](./LICENSE) license.<br>
+> (See the [LICENSE](./LICENSE) file for the whole license text.)
