@@ -1,6 +1,21 @@
 {
-  "name": "ngx",
-  "version": "0.0.0",
+  "name": "@devmn/ngx",
+  "version": "0.0.1",
+  "description": "Components and libraries for Angular.",
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/intelligo-systems/ngx.git"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "author": "Intelligo Systems",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/intelligo-systems/ngx/issues"
+  },
+  "homepage": "https://ngx.dev.mn",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,8 +24,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "publish:image-viewer": "npm publish dist/image-viewer",
-    "publish:stepper": "npm publish dist/image-viewer",
-    "publish:multi-select": "npm publish dist/image-viewer"
+    "publish:stepper": "npm publish dist/stepper",
+    "publish:multi-select": "npm publish dist/multi-select"
   },
   "private": true,
   "dependencies": {

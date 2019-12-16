@@ -30,6 +30,12 @@
       ],
       "stepper/*": [
         "dist/stepper/*"
+      ],
+      "multi-select": [
+        "dist/multi-select"
+      ],
+      "multi-select/*": [
+        "dist/multi-select/*"
       ]
     }
   },

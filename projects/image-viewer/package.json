@@ -1,16 +1,26 @@
 {
   "name": "@devmn/image-viewer",
-  "version": "0.0.2",
-  "private": false,
-  "peerDependencies": {
-    "@angular/common": "^8.2.14",
-    "@angular/core": "^8.2.14"
-  },
-  "description": "This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.14.",
+  "version": "0.0.3",
+  "description": "Angular image viewer component.",
   "main": "karma.conf.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "dev.mn",
-  "license": "MIT"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/intelligo-systems/ngx.git"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "author": "Intelligo Systems",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/intelligo-systems/ngx/issues"
+  },
+  "homepage": "https://ngx.dev.mn",
+  "peerDependencies": {
+    "@angular/common": "^8.2.14",
+    "@angular/core": "^8.2.14"
+  }
 }

@@ -1,7 +1,7 @@
 {
-  "name": "@devmn/stepper",
+  "name": "@devmn/multi-select",
   "version": "0.0.3",
-  "description": "Angular stepper provides a wizard-like workflow by dividing content into logical steps.",
+  "description": "Angular multi select component that provides two lists controls side-by-side that allows items in one list to be selected and moved* to the other list via drag-and-drop and/or a button-based interface.",
   "main": "karma.conf.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,9 +18,9 @@
   "bugs": {
     "url": "https://github.com/intelligo-systems/ngx/issues"
   },
-  "homepage": "https://github.com/intelligo-systems/ngx#readme",
+  "homepage": "https://ngx.dev.mn",
   "peerDependencies": {
-    "@angular/common": "^8.2.14",
-    "@angular/core": "^8.2.14"
+    "@angular/common": "^8.2.4",
+    "@angular/core": "^8.2.4"
   }
 }
