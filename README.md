@@ -25,5 +25,5 @@ or translating any document here to your language. [Find more information in CON
 ## License
 
 > Copyright (C) 2019 Intelligo Systems.<br>
-> Chatbots.mn licensed under the [INTELLIGO](./LICENSE) license.<br>
+> Ngx Angular components licensed under the [MIT](./LICENSE) license.<br>
 > (See the [LICENSE](./LICENSE) file for the whole license text.)
