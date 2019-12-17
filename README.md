@@ -4,11 +4,11 @@ Components and libraries for Angular.
 
 ## Components
 
-Component           | Version
-------------------- | -----------------------------------------------------------------------------------------------------------------
-[@devmn/image-viewer](https://github.com/intelligo-systems/ngx/tree/master/projects/image-viewer) | [![npm version](https://badgen.net/npm/v/@devmn/image-viewer)](https://www.npmjs.com/package/@devmn/image-viewer)
-[@devmn/multi-select](https://github.com/intelligo-systems/ngx/tree/master/projects/multi-select) | [![npm version](https://badgen.net/npm/v/@devmn/multi-select)](https://www.npmjs.com/package/@devmn/multi-select)
-[@devmn/stepper](https://github.com/intelligo-systems/ngx/tree/master/projects/stepper)      | [![npm version](https://badgen.net/npm/v/@devmn/stepper)](https://www.npmjs.com/package/@devmn/stepper)
+Component           | Version | CI Status 
+------------------- | ----------------------------------------------------------------------------------------------------------------- | -----:
+[@devmn/image-viewer](https://github.com/intelligo-systems/ngx/tree/master/projects/image-viewer) | [![npm version](https://badgen.net/npm/v/@devmn/image-viewer)](https://www.npmjs.com/package/@devmn/image-viewer) | [![Build Status](https://github.com/intelligo-systems/ngx/workflows/image-viewer/badge.svg)](https://github.com/intelligo-systems/chatbots.mn/actions?workflow=image-viewer)
+[@devmn/multi-select](https://github.com/intelligo-systems/ngx/tree/master/projects/multi-select) | [![npm version](https://badgen.net/npm/v/@devmn/multi-select)](https://www.npmjs.com/package/@devmn/multi-select) | [![Build Status](https://github.com/intelligo-systems/ngx/workflows/multi-select/badge.svg)](https://github.com/intelligo-systems/chatbots.mn/actions?workflow=multi-select)
+[@devmn/stepper](https://github.com/intelligo-systems/ngx/tree/master/projects/stepper)      | [![npm version](https://badgen.net/npm/v/@devmn/stepper)](https://www.npmjs.com/package/@devmn/stepper) | [![Build Status](https://github.com/intelligo-systems/ngx/workflows/stepper/badge.svg)](https://github.com/intelligo-systems/chatbots.mn/actions?workflow=stepper)
 
 ## Stay In Touch
 
