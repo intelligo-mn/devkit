@@ -25,5 +25,5 @@ jobs:
           ${{ runner.os }}-node-
 
     - run: npm install
-    - run: npm install -g @angular/cli > /dev/null
+    - run: npm install -g @angular/cli
     - run: ng build image-viewer --prod
