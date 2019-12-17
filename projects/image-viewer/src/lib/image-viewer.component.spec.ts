@@ -19,7 +19,8 @@ describe('ImageViewerComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should have default config values', () => {
+    const defaultVal = component.config.btnClass;
+    expect(defaultVal).toBeTruthy();
   });
 });

@@ -1,2 +1,12 @@
-
-<router-outlet></router-outlet>
+<div style="display: flex">
+  <div style="width: 100%; display: flex">
+    <image-viewer
+      [src]="images"
+      [(config)]="config"
+      [(index)]="imageIndexOne"
+      (customEvent)="handleEvent($event)"
+    >
+    </image-viewer>
+  </div>
+  <router-outlet></router-outlet>
+</div>

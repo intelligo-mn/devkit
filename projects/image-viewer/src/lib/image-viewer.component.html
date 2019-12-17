@@ -1,0 +1,92 @@
+<div
+  class="img-container"
+  [style.backgroundColor]="config.containerBackgroundColor"
+  (wheel)="scrollZoom($event)"
+  (dragover)="onDragOver($event)"
+>
+  <img
+    [src]="src[index]"
+    [ngStyle]="style"
+    alt="Image not found..."
+    (dragstart)="onDragStart($event)"
+    (load)="onLoad()"
+    (loadstart)="onLoadStart()"
+  />
+
+  <div></div>
+  <div class="spinner-container" *ngIf="loading">
+    <div class="spinner"></div>
+  </div>
+
+  <button
+    type="button"
+    [class]="config.btnClass"
+    *ngIf="config.btnShow.rotateCounterClockwise"
+    (click)="rotateCounterClockwise()"
+  >
+    <span [class]="config.btnIcons.rotateCounterClockwise"></span>
+  </button>
+  <button
+    type="button"
+    [class]="config.btnClass"
+    *ngIf="config.btnShow.rotateClockwise"
+    (click)="rotateClockwise()"
+  >
+    <span [class]="config.btnIcons.rotateClockwise"></span>
+  </button>
+
+  <button
+    type="button"
+    [class]="config.btnClass"
+    *ngIf="config.btnShow.zoomOut"
+    (click)="zoomOut()"
+  >
+    <span [class]="config.btnIcons.zoomOut"></span>
+  </button>
+  <button
+    type="button"
+    [class]="config.btnClass"
+    *ngIf="config.btnShow.zoomIn"
+    (click)="zoomIn()"
+  >
+    <span [class]="config.btnIcons.zoomIn"></span>
+  </button>
+
+  <button
+    type="button"
+    [class]="config.btnClass"
+    *ngFor="let cBtn of config.customBtns"
+    (click)="fireCustomEvent(cBtn.name, index)"
+  >
+    <span [class]="cBtn.icon"></span>
+  </button>
+
+  <button
+    type="button"
+    id="ngx-fs-btn"
+    [class]="config.btnClass"
+    (click)="toggleFullscreen()"
+    *ngIf="config.allowFullscreen"
+  >
+    <span [class]="config.btnIcons.fullscreen"></span>
+  </button>
+
+  <div class="nav-button-container" *ngIf="src.length > 1">
+    <button
+      type="button"
+      [class]="config.btnClass"
+      (click)="prevImage($event)"
+      [disabled]="index === 0"
+    >
+      <span [class]="config.btnIcons.prev"></span>
+    </button>
+    <button
+      type="button"
+      [class]="config.btnClass"
+      (click)="nextImage($event)"
+      [disabled]="index === src.length - 1"
+    >
+      <span [class]="config.btnIcons.next"></span>
+    </button>
+  </div>
+</div>
