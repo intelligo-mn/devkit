@@ -1,6 +1,6 @@
 {
   "name": "@devmn/image-viewer",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Angular image viewer component.",
   "main": "karma.conf.js",
   "scripts": {
