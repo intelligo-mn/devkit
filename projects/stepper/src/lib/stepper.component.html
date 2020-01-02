@@ -1,0 +1,47 @@
+<div class="stepper">
+    <div class="stepper-header">
+        <ul class="nav nav-justified">
+            <li class="nav-item p-0" *ngFor="let step of steps" [ngClass]="{
+            active: step.isActive,
+            enabled: !step.isDisabled,
+            disabled: step.isDisabled,
+            completed: isCompleted
+          }">
+                <a (click)="goToStep(step)">{{ step.title }}</a>
+            </li>
+        </ul>
+    </div>
+    <div class="stepper-body">
+        <ng-content class="content"></ng-content>
+    </div>
+    <div class="stepper-footer" [hidden]="isCompleted">
+      <div class="step_container">
+        <button
+          type="button"F
+          class="btn btn-secondary"
+          (click)="previous()"
+          [hidden]="!hasPrevStep"
+        >
+          Previous
+        </button>
+        <button
+          type="button"
+          class="btn btn-secondary"
+          (click)="next()"
+          [disabled]="!activeStep.isValid"
+          [hidden]="!hasNextStep"
+        >
+          Next
+        </button>
+        <button
+          type="button"
+          class="btn btn-secondary"
+          (click)="complete()"
+          [disabled]="!activeStep.isValid"
+          [hidden]="!lastStep"
+        >
+          Complete
+        </button>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+.stepper {
+  &-header {
+    border-bottom: 1px solid #e5e5e5;
+    ul {
+      position: relative;
+      top: 0.5px;
+      display: flex;
+
+      flex-wrap: wrap;
+      li {
+        display: block;
+        width: auto;
+        border-bottom: 2px solid transparent;
+        &.active {
+          border-bottom-color: #187d08;
+          a {
+            color: #187d08 !important;
+          }
+        }
+
+        &.enabled {
+          a {
+            color: #222;
+          }
+        }
+      }
+    }
+  }
+
+  &-body {
+    padding: 10px;
+  }
+
+  &-footer {
+    display: flex;
+    padding: 14px;
+    border-top: 1px solid #e5e5e5;
+
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .step_container {
+      button:first-child {
+        margin-right: 1em;
+      }
+    }
+  }
+}
