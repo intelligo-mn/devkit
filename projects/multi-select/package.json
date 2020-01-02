@@ -1,6 +1,6 @@
 {
   "name": "@devmn/multi-select",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Angular multi select component that provides two lists controls side-by-side that allows items in one list to be selected and moved* to the other list via drag-and-drop and/or a button-based interface.",
   "main": "karma.conf.js",
   "scripts": {
