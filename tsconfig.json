@@ -36,6 +36,12 @@
       ],
       "multi-select/*": [
         "dist/multi-select/*"
+      ],
+      "event-manager": [
+        "dist/event-manager"
+      ],
+      "event-manager/*": [
+        "dist/event-manager/*"
       ]
     }
   },

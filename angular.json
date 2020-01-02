@@ -229,6 +229,41 @@
           }
         }
       }
+    },
+    "event-manager": {
+      "projectType": "library",
+      "root": "projects/event-manager",
+      "sourceRoot": "projects/event-manager/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/event-manager/tsconfig.lib.json",
+            "project": "projects/event-manager/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/event-manager/src/test.ts",
+            "tsConfig": "projects/event-manager/tsconfig.spec.json",
+            "karmaConfig": "projects/event-manager/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/event-manager/tsconfig.lib.json",
+              "projects/event-manager/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "ngx"
 }

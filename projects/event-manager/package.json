@@ -1,0 +1,26 @@
+{
+  "name": "@devmn/event-manager",
+  "version": "1.0.1",
+  "description": "Reactive event manager utility.",
+  "main": "karma.conf.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/intelligo-systems/ngx.git"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "author": "Intelligo Systems",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/intelligo-systems/ngx/issues"
+  },
+  "homepage": "https://ngx.dev.mn",
+  "peerDependencies": {
+    "@angular/common": "^8.2.14",
+    "@angular/core": "^8.2.14"
+  }
+}
