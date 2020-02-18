@@ -8,9 +8,9 @@ import {
   Output,
   HostListener
 } from "@angular/core";
-import { BarHorizontalChartBuilder } from "../core/bar-horizontal-chart.builder";
 import { IBarHorizontalChartConfig } from "./bar-horizontal-chart.model";
 import { ChartData } from "../core/chart.model";
+import { BarHorizontalChartBuilder } from './bar-horizontal-chart.builder';
 
 @Component({
   selector: "qms-bar-horizontal-chart",
