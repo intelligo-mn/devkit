@@ -42,6 +42,10 @@
       ],
       "event-manager/*": [
         "dist/event-manager/*"
+      ],
+      "charts": [
+        "dist/charts/charts",
+        "dist/charts"
       ]
     }
   },
