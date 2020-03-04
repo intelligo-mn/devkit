@@ -25,7 +25,9 @@
     "e2e": "ng e2e",
     "publish:image-viewer": "npm publish dist/image-viewer",
     "publish:stepper": "npm publish dist/stepper",
-    "publish:multi-select": "npm publish dist/multi-select"
+    "publish:multi-select": "npm publish dist/multi-select",
+    "publish:event-manager": "npm publish dist/event-manager",
+    "publish:charts": "npm publish dist/charts"
   },
   "private": true,
   "dependencies": {
