@@ -1,12 +1,22 @@
-import { NgModule } from '@angular/core';
-import { ChartsComponent } from './charts.component';
-
-
+import { NgModule } from "@angular/core";
+import { BarChartHorizontalComponent } from "./bar-horizontal-chart/bar-horizontal-chart.component";
+import { BarVerticalChartComponent } from "./bar-vertical-chart/bar-vertical-chart.component";
+import { LineAreaChartComponent } from "./line-area-chart/line-area-chart.component";
+import { PieChartComponent } from "./pie-chart/pie-chart.component";
 
 @NgModule({
-  declarations: [ChartsComponent],
-  imports: [
+  declarations: [
+    BarChartHorizontalComponent,
+    BarVerticalChartComponent,
+    LineAreaChartComponent,
+    PieChartComponent
   ],
-  exports: [ChartsComponent]
+  imports: [],
+  exports: [
+    BarChartHorizontalComponent,
+    BarVerticalChartComponent,
+    LineAreaChartComponent,
+    PieChartComponent
+  ]
 })
-export class ChartsModule { }
+export class ChartsModule {}
