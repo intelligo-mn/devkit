@@ -1,24 +1,21 @@
-# Charts
+# Ngx
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.1.
+Chart framework for Angular.
 
-## Code scaffolding
+## Stay In Touch
 
-Run `ng generate component component-name --project charts` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project charts`.
-> Note: Don't forget to add `--project charts` or else it will be added to the default project in your `angular.json` file. 
+- Blogging at [Medium](https://medium.com/intelligo-systems)
+- Chatting on [Slack](https://slack.intelligo.systems/)
 
-## Build
+## Contributors
 
-Run `ng build charts` to build the project. The build artifacts will be stored in the `dist/` directory.
+- 📥 Pull requests and 🌟 Stars are always welcome. 
+- You may contribute in several ways like creating new features, fixing bugs, improving documentation and examples
+or translating any document here to your language. [Find more information in CONTRIBUTING.md](CONTRIBUTING.md).
+<a href="https://github.com/intelligo-systems/ngx/graphs/contributors">Contributors</a>
 
-## Publishing
+## License
 
-After building your library with `ng build charts`, go to the dist folder `cd dist/charts` and run `npm publish`.
-
-## Running unit tests
-
-Run `ng test charts` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+> Copyright (C) 2020 Intelligo Systems.<br>
+> Ngx Angular components licensed under the [MIT](./LICENSE) license.<br>
+> (See the [LICENSE](./LICENSE) file for the whole license text.)
