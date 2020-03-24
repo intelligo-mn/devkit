@@ -1,14 +1,14 @@
 import { Component, Input, Output, EventEmitter } from "@angular/core";
 
 @Component({
-  selector: "stepper-step",
+  selector: "dev-stepper-step",
   template: `
     <div [hidden]="!isActive">
       <ng-content></ng-content>
     </div>
   `
 })
-export class StepperStepComponent {
+export class DevStepperStepComponent {
   @Output() id: string;
   @Input() title: string;
   @Input() isValid = false;

@@ -6,23 +6,23 @@ import {
   EventEmitter,
   Output
 } from "@angular/core";
-import { StepperStepComponent } from "./stepper-step.component";
+import { DevStepperStepComponent } from "./stepper-step.component";
 
 @Component({
-  selector: "stepper",
+  selector: "dev-stepper",
   templateUrl: "./stepper.component.html",
   styleUrls: ["./stepper.component.scss"]
 })
-export class StepperComponent implements AfterContentInit {
-  @ContentChildren(StepperStepComponent)
-  wizardSteps: QueryList<StepperStepComponent>;
+export class DevStepperComponent implements AfterContentInit {
+  @ContentChildren(DevStepperStepComponent)
+  wizardSteps: QueryList<DevStepperStepComponent>;
 
-  private _steps: Array<StepperStepComponent> = [];
+  private _steps: Array<DevStepperStepComponent> = [];
   private _isCompleted = false;
 
   @Output()
-  onStepChanged: EventEmitter<StepperStepComponent> = new EventEmitter<
-    StepperStepComponent
+  onStepChanged: EventEmitter<DevStepperStepComponent> = new EventEmitter<
+    DevStepperStepComponent
   >();
 
   @Output() onNext: EventEmitter<any> = new EventEmitter<any>();
@@ -51,7 +51,7 @@ export class StepperComponent implements AfterContentInit {
     }
   }
 
-  get steps(): Array<StepperStepComponent> {
+  get steps(): Array<DevStepperStepComponent> {
     return this._steps.filter(step => !step.hidden);
   }
 
@@ -59,11 +59,11 @@ export class StepperComponent implements AfterContentInit {
     return this._isCompleted;
   }
 
-  get activeStep(): StepperStepComponent {
+  get activeStep(): DevStepperStepComponent {
     return this.steps.find(step => step.isActive);
   }
 
-  set activeStep(step: StepperStepComponent) {
+  set activeStep(step: DevStepperStepComponent) {
     if (step !== this.activeStep && !step.isDisabled) {
       this.activeStep.isActive = false;
       step.isActive = true;
@@ -91,7 +91,7 @@ export class StepperComponent implements AfterContentInit {
     return !this.firstStep && this.activeStepIndex > 0;
   }
 
-  public goToStep(step: StepperStepComponent): void {
+  public goToStep(step: DevStepperStepComponent): void {
     if (!this.isCompleted) {
       this.activeStep = step;
     }
@@ -99,7 +99,7 @@ export class StepperComponent implements AfterContentInit {
 
   public next(): void {
     if (this.hasNextStep) {
-      const nextStep: StepperStepComponent = this.steps[
+      const nextStep: DevStepperStepComponent = this.steps[
         this.activeStepIndex + 1
       ];
       nextStep.isDisabled = false;
@@ -110,7 +110,7 @@ export class StepperComponent implements AfterContentInit {
 
   public previous(): void {
     if (this.hasPrevStep) {
-      const prevStep: StepperStepComponent = this.steps[
+      const prevStep: DevStepperStepComponent = this.steps[
         this.activeStepIndex - 1
       ];
       prevStep.isDisabled = false;
