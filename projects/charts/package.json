@@ -16,8 +16,8 @@
   },
   "homepage": "https://github.com/intelligo-systems/ngx#readme",
   "peerDependencies": {
-    "@angular/common": "^9.0.1",
-    "@angular/core": "^9.0.1",
-    "tslib": "^1.10.0"
+    "@angular/common": "^9.0.7",
+    "@angular/core": "^9.0.7",
+    "tslib": "^1.11.1"
   }
 }

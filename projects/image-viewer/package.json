@@ -20,7 +20,7 @@
   },
   "homepage": "https://ngx.dev.mn",
   "peerDependencies": {
-    "@angular/common": "^8.2.14",
-    "@angular/core": "^8.2.14"
+    "@angular/common": "^9.0.7",
+    "@angular/core": "^9.0.7"
   }
 }
