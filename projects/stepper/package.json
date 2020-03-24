@@ -1,6 +1,6 @@
 {
   "name": "@devmn/stepper",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "description": "Angular stepper provides a wizard-like workflow by dividing content into logical steps.",
   "main": "karma.conf.js",
   "scripts": {
