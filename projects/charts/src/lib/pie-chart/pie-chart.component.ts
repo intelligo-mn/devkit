@@ -1,60 +1,48 @@
-import {
-  Component,
-  Input,
-  ViewChild,
-  ElementRef,
-  OnChanges,
-  Output,
-  EventEmitter,
-  HostListener
-} from '@angular/core';
-import { IPieChartConfig } from './pie-chart.model';
-import { PieChartBuilder } from './pie-chart.builder';
-import { fromEvent, Subscription } from 'rxjs';
-import { ChartData } from '../core/chart.model';
+import { Component, Input } from "@angular/core";
+import { ChartOptions } from "chart.js";
+import * as pluginDataLabels from "chartjs-plugin-datalabels";
+import { BaseChartComponent } from "../base-chart.component";
 
 @Component({
-  selector: 'qms-pie-chart',
-  templateUrl: './pie-chart.component.html',
-  providers: [
-    PieChartBuilder
-  ],
-  styleUrls: ["./pie-chart.component.scss"]
+  selector: "dev-pie-chart",
+  templateUrl: "./pie-chart.component.html",
+  styleUrls: ["./pie-chart.component.scss"],
 })
-export class PieChartComponent implements OnChanges {
-  @Input() config: IPieChartConfig;
-  @ViewChild('chart') chartElm: ElementRef;
-  @Output() sliceClicked: EventEmitter<ChartData> = new EventEmitter();
+export class PieChartComponent extends BaseChartComponent {
+  @Input() data: Array<any>;
 
-  private resizeWindowTimeout: any;
+  plugins = [pluginDataLabels];
 
-  constructor(
-    private chartBuilder: PieChartBuilder
-  ) {
-    this.chartBuilder.sliceClicked$.subscribe(data => {
-      this.sliceClicked.emit(data);
-    });
+  constructor() {
+    super(["backgroundColor"], true);
   }
 
-  ngOnChanges() {
-    this.buildChart();
+  createdOptions(): ChartOptions {
+    const options: ChartOptions = {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        datalabels: {
+          display: true,
+          color: "white",
+          // anchor: 'center',
+          // align: 'end'
+        },
+      },
+      legend: {
+        position: "right",
+      },
+    };
+    return options;
   }
 
-  buildChart(): void {
-    if (this.config && this.config.data && this.config.data.length > 0) {
-      this.chartBuilder.buildChart(this.chartElm, this.config);
+  init() {
+    if (this.colors.length <= 0 && this.data) {
+      const labels: Array<string> = this.data
+        .filter((data) => data[this.key])
+        .map((data) => data[this.key]);
+
+      this.updateColors(labels);
     }
-  }
-
-  /**
-   * Opting against fromEvent due to incompatibility with rxjs 5 => 6
-   */
-  @HostListener('window:resize')
-  onResize() {
-    const self = this;
-    clearTimeout(this.resizeWindowTimeout);
-    this.resizeWindowTimeout = setTimeout(() => {
-      self.buildChart();
-    }, 300);
   }
 }

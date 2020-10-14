@@ -1,0 +1,14 @@
+<div style="display: block;">
+  <canvas
+    *ngIf="datasets[0] && datasets[0].data"
+    baseChart
+    chartType="{{ type }}"
+    [legend]="true"
+    height="350"
+    [colors]="colors"
+    [datasets]="datasets"
+    [labels]="labels"
+    [options]="options"
+  >
+  </canvas>
+</div>
