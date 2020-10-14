@@ -13,7 +13,7 @@ export class AreaChartComponent extends BaseChartComponent {
   constructor() {
     super(["borderColor", "pointBackgroundColor", "backgroundColor"]);
   }
-  
+
   createdOptions(): ChartOptions {
     const options: ChartOptions = {
       responsive: true,
