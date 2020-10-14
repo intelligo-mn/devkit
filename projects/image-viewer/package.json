@@ -19,8 +19,11 @@
     "url": "https://github.com/intelligo-systems/ngx/issues"
   },
   "homepage": "https://ngx.dev.mn",
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
   "peerDependencies": {
-    "@angular/common": "^9.0.7",
-    "@angular/core": "^9.0.7"
+    "@angular/common": "^10.1.5",
+    "@angular/core": "^10.1.5"
   }
 }

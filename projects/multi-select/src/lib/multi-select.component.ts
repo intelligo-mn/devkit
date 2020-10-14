@@ -1,39 +1,47 @@
-import { Component, DoCheck, EventEmitter, Input, IterableDiffers, OnChanges, Output, SimpleChange } from '@angular/core';
-
-import { BasicSelectData } from './multi-select.model';
+import {
+  Component,
+  DoCheck,
+  EventEmitter,
+  Input,
+  IterableDiffers,
+  OnChanges,
+  Output,
+  SimpleChange,
+} from "@angular/core";
+import { BasicSelectData } from "./multi-select.model";
 
 export type compareFunction = (a: any, b: any) => number;
 
 let nextId = 0;
 
 @Component({
-  selector: 'multi-select',
-  templateUrl: './multi-select.component.html',
-  styleUrls: ['./multi-select.component.scss'],
+  selector: "multi-select",
+  templateUrl: "./multi-select.component.html",
+  styleUrls: ["./multi-select.component.scss"],
 })
 export class MultiSelectComponent implements DoCheck, OnChanges {
-  static AVAILABLE_LIST_NAME = 'available';
-  static CONFIRMED_LIST_NAME = 'confirmed';
+  static AVAILABLE_LIST_NAME = "available";
+  static CONFIRMED_LIST_NAME = "confirmed";
 
-  static LTR = 'left-to-right';
-  static RTL = 'right-to-left';
+  static LTR = "left-to-right";
+  static RTL = "right-to-left";
 
   static DEFAULT_FORMAT = {
-    add: 'Add',
-    remove: 'Remove',
-    all: 'All',
-    none: 'None',
+    add: "Add",
+    remove: "Remove",
+    all: "All",
+    none: "None",
     direction: MultiSelectComponent.LTR,
     draggable: true,
     locale: undefined,
-    selectAll: 'select all',
-    removeAll: 'remove all',
+    selectAll: "select all",
+    removeAll: "remove all",
   };
 
   @Input() id = `dual-list-${nextId++}`;
-  @Input() key = '_id';
-  @Input() display: any = '_name';
-  @Input() height = '100px';
+  @Input() key = "_id";
+  @Input() display: any = "_name";
+  @Input() height = "100px";
   @Input() filter = false;
   @Input() format = MultiSelectComponent.DEFAULT_FORMAT;
   @Input() sort = false;
@@ -42,7 +50,7 @@ export class MultiSelectComponent implements DoCheck, OnChanges {
   @Input() source: Array<any>;
   @Input() destination: Array<any>;
   @Input() loading = false;
-  @Input() emptySourceMessage: string = 'Empty';
+  @Input() emptySourceMessage: string = "Empty";
   @Output() destinationChange = new EventEmitter();
 
   available: BasicSelectData;
@@ -58,63 +66,74 @@ export class MultiSelectComponent implements DoCheck, OnChanges {
   };
 
   constructor(private differs: IterableDiffers) {
-    this.available = new BasicSelectData(MultiSelectComponent.AVAILABLE_LIST_NAME);
-    this.confirmed = new BasicSelectData(MultiSelectComponent.CONFIRMED_LIST_NAME);
+    this.available = new BasicSelectData(
+      MultiSelectComponent.AVAILABLE_LIST_NAME
+    );
+    this.confirmed = new BasicSelectData(
+      MultiSelectComponent.CONFIRMED_LIST_NAME
+    );
     this.sourceLoading = false;
   }
 
   ngOnChanges(changeRecord: { [key: string]: SimpleChange }) {
-    if (changeRecord['filter']) {
-      if (changeRecord['filter'].currentValue === false) {
+    if (changeRecord["filter"]) {
+      if (changeRecord["filter"].currentValue === false) {
         this.clearFilter(this.available);
         this.clearFilter(this.confirmed);
       }
     }
 
-    if (changeRecord['sort']) {
-      if (changeRecord['sort'].currentValue === true && this.compare === undefined) {
+    if (changeRecord["sort"]) {
+      if (
+        changeRecord["sort"].currentValue === true &&
+        this.compare === undefined
+      ) {
         this.compare = this.sorter;
-      } else if (changeRecord['sort'].currentValue === false) {
+      } else if (changeRecord["sort"].currentValue === false) {
         this.compare = undefined;
       }
     }
 
-    if (changeRecord['format']) {
-      this.format = changeRecord['format'].currentValue;
+    if (changeRecord["format"]) {
+      this.format = changeRecord["format"].currentValue;
 
-      if (typeof this.format.direction === 'undefined') {
+      if (typeof this.format.direction === "undefined") {
         this.format.direction = MultiSelectComponent.LTR;
       }
 
-      if (typeof this.format.add === 'undefined') {
+      if (typeof this.format.add === "undefined") {
         this.format.add = MultiSelectComponent.DEFAULT_FORMAT.add;
       }
 
-      if (typeof this.format.remove === 'undefined') {
+      if (typeof this.format.remove === "undefined") {
         this.format.remove = MultiSelectComponent.DEFAULT_FORMAT.remove;
       }
 
-      if (typeof this.format.all === 'undefined') {
+      if (typeof this.format.all === "undefined") {
         this.format.all = MultiSelectComponent.DEFAULT_FORMAT.all;
       }
 
-      if (typeof this.format.none === 'undefined') {
+      if (typeof this.format.none === "undefined") {
         this.format.none = MultiSelectComponent.DEFAULT_FORMAT.none;
       }
 
-      if (typeof this.format.draggable === 'undefined') {
+      if (typeof this.format.draggable === "undefined") {
         this.format.draggable = MultiSelectComponent.DEFAULT_FORMAT.draggable;
       }
     }
 
-    if (changeRecord['source']) {
-      this.available = new BasicSelectData(MultiSelectComponent.AVAILABLE_LIST_NAME);
+    if (changeRecord["source"]) {
+      this.available = new BasicSelectData(
+        MultiSelectComponent.AVAILABLE_LIST_NAME
+      );
       this.updatedSource();
       this.updatedDestination();
     }
 
-    if (changeRecord['destination']) {
-      this.confirmed = new BasicSelectData(MultiSelectComponent.CONFIRMED_LIST_NAME);
+    if (changeRecord["destination"]) {
+      this.confirmed = new BasicSelectData(
+        MultiSelectComponent.CONFIRMED_LIST_NAME
+      );
       this.updatedDestination();
       this.updatedSource();
     }
@@ -142,7 +161,10 @@ export class MultiSelectComponent implements DoCheck, OnChanges {
       sourceChanges.forEachAddedItem((r: any) => {
         // Do not add duplicates even if source has duplicates.
         if (this.findItemIndex(this.available.list, r.item, this.key) === -1) {
-          this.available.list.push({ _id: this.makeId(r.item), _name: this.makeName(r.item) });
+          this.available.list.push({
+            _id: this.makeId(r.item),
+            _name: this.makeName(r.item),
+          });
         }
       });
 
@@ -166,10 +188,17 @@ export class MultiSelectComponent implements DoCheck, OnChanges {
       destChanges.forEachRemovedItem((r: any) => {
         const idx = this.findItemIndex(this.confirmed.list, r.item, this.key);
         if (idx !== -1) {
-          if (!this.isItemSelected(this.confirmed.pick, this.confirmed.list[idx])) {
+          if (
+            !this.isItemSelected(this.confirmed.pick, this.confirmed.list[idx])
+          ) {
             this.selectItem(this.confirmed.pick, this.confirmed.list[idx]);
           }
-          this.moveItem(this.confirmed, this.available, this.confirmed.list[idx], false);
+          this.moveItem(
+            this.confirmed,
+            this.available,
+            this.confirmed.list[idx],
+            false
+          );
           moved = true;
         }
       });
@@ -177,10 +206,17 @@ export class MultiSelectComponent implements DoCheck, OnChanges {
       destChanges.forEachAddedItem((r: any) => {
         const idx = this.findItemIndex(this.available.list, r.item, this.key);
         if (idx !== -1) {
-          if (!this.isItemSelected(this.available.pick, this.available.list[idx])) {
+          if (
+            !this.isItemSelected(this.available.pick, this.available.list[idx])
+          ) {
             this.selectItem(this.available.pick, this.available.list[idx]);
           }
-          this.moveItem(this.available, this.confirmed, this.available.list[idx], false);
+          this.moveItem(
+            this.available,
+            this.confirmed,
+            this.available.list[idx],
+            false
+          );
           moved = true;
         }
       });
@@ -236,11 +272,14 @@ export class MultiSelectComponent implements DoCheck, OnChanges {
     list.dragStart = true;
 
     // Set a custom type to be this dual-list's id.
-    event.dataTransfer.setData(this.id, item['_id']);
+    event.dataTransfer.setData(this.id, item["_id"]);
   }
 
   allowDrop(event: DragEvent, list: BasicSelectData): boolean {
-    if (event.dataTransfer.types.length && event.dataTransfer.types[0] === this.id) {
+    if (
+      event.dataTransfer.types.length &&
+      event.dataTransfer.types[0] === this.id
+    ) {
       event.preventDefault();
       if (!list.dragStart) {
         list.dragOver = true;
@@ -255,7 +294,10 @@ export class MultiSelectComponent implements DoCheck, OnChanges {
   }
 
   drop(event: DragEvent, list: BasicSelectData) {
-    if (event.dataTransfer.types.length && event.dataTransfer.types[0] === this.id) {
+    if (
+      event.dataTransfer.types.length &&
+      event.dataTransfer.types[0] === this.id
+    ) {
       event.preventDefault();
       this.dragLeave();
       this.dragEnd();
@@ -274,8 +316,8 @@ export class MultiSelectComponent implements DoCheck, OnChanges {
     // Clear removed items.
     let pos = this.destination.length;
     while ((pos -= 1) >= 0) {
-      const mv = this.confirmed.list.filter(conf => {
-        if (typeof this.destination[pos] === 'object') {
+      const mv = this.confirmed.list.filter((conf) => {
+        if (typeof this.destination[pos] === "object") {
           return conf._id === this.destination[pos][this.key];
         } else {
           return conf._id === this.destination[pos];
@@ -291,7 +333,7 @@ export class MultiSelectComponent implements DoCheck, OnChanges {
     // Push added items.
     for (let i = 0, len = this.confirmed.list.length; i < len; i += 1) {
       let mv = this.destination.filter((d: any) => {
-        if (typeof d === 'object') {
+        if (typeof d === "object") {
           return d[this.key] === this.confirmed.list[i]._id;
         } else {
           return d === this.confirmed.list[i]._id;
@@ -301,7 +343,7 @@ export class MultiSelectComponent implements DoCheck, OnChanges {
       if (mv.length === 0) {
         // Not found so add.
         mv = this.source.filter((o: any) => {
-          if (typeof o === 'object') {
+          if (typeof o === "object") {
             return o[this.key] === this.confirmed.list[i]._id;
           } else {
             return o === this.confirmed.list[i]._id;
@@ -320,7 +362,7 @@ export class MultiSelectComponent implements DoCheck, OnChanges {
     }
   }
 
-  findItemIndex(list: Array<any>, item: any, key: any = '_id') {
+  findItemIndex(list: Array<any>, item: any, key: any = "_id") {
     let idx = -1;
 
     function matchObject(e: any) {
@@ -340,7 +382,7 @@ export class MultiSelectComponent implements DoCheck, OnChanges {
     }
 
     // Assumption is that the arrays do not have duplicates.
-    if (typeof item === 'object') {
+    if (typeof item === "object") {
       list.filter(matchObject);
     } else {
       list.filter(match);
@@ -356,7 +398,12 @@ export class MultiSelectComponent implements DoCheck, OnChanges {
     }
   }
 
-  moveItem(source: BasicSelectData, target: BasicSelectData, item: any = null, trueup = true) {
+  moveItem(
+    source: BasicSelectData,
+    target: BasicSelectData,
+    item: any = null,
+    trueup = true
+  ) {
     let i = 0;
     let len = source.pick.length;
 
@@ -374,7 +421,7 @@ export class MultiSelectComponent implements DoCheck, OnChanges {
           mv[0] = source.pick[idx];
         }
       } else {
-        mv = source.list.filter(src => {
+        mv = source.list.filter((src) => {
           return src._id === source.pick[i]._id;
         });
       }
@@ -382,7 +429,7 @@ export class MultiSelectComponent implements DoCheck, OnChanges {
       // Should only ever be 1
       if (mv.length === 1) {
         // Add if not already in target.
-        if (target.list.filter(trg => trg._id === mv[0]._id).length === 0) {
+        if (target.list.filter((trg) => trg._id === mv[0]._id).length === 0) {
           target.list.push(mv[0]);
         }
 
@@ -409,13 +456,18 @@ export class MultiSelectComponent implements DoCheck, OnChanges {
   }
 
   isItemSelected(list: Array<any>, item: any): boolean {
-    if (list.filter(e => Object.is(e, item)).length > 0) {
+    if (list.filter((e) => Object.is(e, item)).length > 0) {
       return true;
     }
     return false;
   }
 
-  shiftClick(event: MouseEvent, index: number, source: BasicSelectData, item: any) {
+  shiftClick(
+    event: MouseEvent,
+    index: number,
+    source: BasicSelectData,
+    item: any
+  ) {
     if (event.shiftKey && source.last && !Object.is(item, source.last)) {
       const idx = source.sift.indexOf(source.last);
       if (index > idx) {
@@ -504,7 +556,7 @@ export class MultiSelectComponent implements DoCheck, OnChanges {
 
   clearFilter(source: BasicSelectData) {
     if (source) {
-      source.picker = '';
+      source.picker = "";
       this.onFilter(source);
     }
   }
@@ -513,10 +565,16 @@ export class MultiSelectComponent implements DoCheck, OnChanges {
     if (source.picker.length > 0) {
       try {
         const filtered = source.list.filter((item: any) => {
-          if (Object.prototype.toString.call(item) === '[object Object]') {
+          if (Object.prototype.toString.call(item) === "[object Object]") {
             if (item._name !== undefined) {
               // @ts-ignore: remove when d.ts has locale as an argument.
-              return item._name.toLocaleLowerCase(this.format.locale).indexOf(source.picker.toLocaleLowerCase(this.format.locale)) !== -1;
+              return (
+                item._name
+                  .toLocaleLowerCase(this.format.locale)
+                  .indexOf(
+                    source.picker.toLocaleLowerCase(this.format.locale)
+                  ) !== -1
+              );
             } else {
               // @ts-ignore: remove when d.ts has locale as an argument.
               return (
@@ -527,7 +585,13 @@ export class MultiSelectComponent implements DoCheck, OnChanges {
             }
           } else {
             // @ts-ignore: remove when d.ts has locale as an argument.
-            return item.toLocaleLowerCase(this.format.locale).indexOf(source.picker.toLocaleLowerCase(this.format.locale)) !== -1;
+            return (
+              item
+                .toLocaleLowerCase(this.format.locale)
+                .indexOf(
+                  source.picker.toLocaleLowerCase(this.format.locale)
+                ) !== -1
+            );
           }
         });
         source.sift = filtered;
@@ -544,7 +608,7 @@ export class MultiSelectComponent implements DoCheck, OnChanges {
   }
 
   private makeId(item: any): string | number {
-    if (typeof item === 'object') {
+    if (typeof item === "object") {
       return item[this.key];
     } else {
       return item;
@@ -553,57 +617,64 @@ export class MultiSelectComponent implements DoCheck, OnChanges {
 
   // Allow for complex names by passing an array of strings.
   // Example: [display]="[ '_type.substring(0,1)', '_name' ]"
-  protected makeName(item: any, separator = '_'): string {
+  protected makeName(item: any, separator = "_"): string {
     const display = this.display;
 
     function fallback(itm: any) {
       switch (Object.prototype.toString.call(itm)) {
-        case '[object Number]':
+        case "[object Number]":
           return itm;
-        case '[object String]':
+        case "[object String]":
           return itm;
         default:
           if (itm !== undefined) {
             return itm[display];
           } else {
-            return 'undefined';
+            return "undefined";
           }
       }
     }
 
-    let str = '';
+    let str = "";
 
     if (this.display !== undefined) {
       switch (Object.prototype.toString.call(this.display)) {
-        case '[object Function]':
+        case "[object Function]":
           str = this.display(item);
           break;
 
-        case '[object Array]':
+        case "[object Array]":
           for (let i = 0, len = this.display.length; i < len; i += 1) {
             if (str.length > 0) {
               str = str + separator;
             }
 
-            if (this.display[i].indexOf('.') === -1) {
+            if (this.display[i].indexOf(".") === -1) {
               // Simple, just add to string.
               str = str + item[this.display[i]];
             } else {
               // Complex, some action needs to be performed
-              const parts = this.display[i].split('.');
+              const parts = this.display[i].split(".");
 
               const s = item[parts[0]];
               if (s) {
                 // Use brute force
-                if (parts[1].indexOf('substring') !== -1) {
-                  const nums = parts[1].substring(parts[1].indexOf('(') + 1, parts[1].indexOf(')')).split(',');
+                if (parts[1].indexOf("substring") !== -1) {
+                  const nums = parts[1]
+                    .substring(parts[1].indexOf("(") + 1, parts[1].indexOf(")"))
+                    .split(",");
 
                   switch (nums.length) {
                     case 1:
                       str = str + s.substring(parseInt(nums[0], 10));
                       break;
                     case 2:
-                      str = str + s.substring(parseInt(nums[0], 10), parseInt(nums[1], 10));
+                      str =
+                        str +
+                        s.substring(
+                          parseInt(nums[0], 10),
+                          parseInt(nums[1], 10)
+                        );
                       break;
                     default:
                       str = str + s;
