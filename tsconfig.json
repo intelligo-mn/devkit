@@ -46,6 +46,10 @@
       "charts": [
         "dist/charts/charts",
         "dist/charts"
+      ],
+      "utils": [
+        "dist/utils/utils",
+        "dist/utils"
       ]
     }
   },
