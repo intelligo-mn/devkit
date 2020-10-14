@@ -1,22 +1,34 @@
 import { NgModule } from "@angular/core";
-import { BarChartHorizontalComponent } from "./bar-horizontal-chart/bar-horizontal-chart.component";
-import { BarVerticalChartComponent } from "./bar-vertical-chart/bar-vertical-chart.component";
-import { LineAreaChartComponent } from "./line-area-chart/line-area-chart.component";
+import { CommonModule } from "@angular/common";
+import { AreaChartComponent } from "./area-chart/area-chart.component";
+import { ChartsModule } from "ng2-charts";
 import { PieChartComponent } from "./pie-chart/pie-chart.component";
+import { BarChartComponent } from "./bar-chart/bar-chart.component";
+import { ColumnChartComponent } from "./column-chart/column-chart.component";
+import { LineChartComponent } from "./line-chart/line-chart.component";
+import { SankeyChartComponent } from "./sankey-chart/sankey-chart.component";
+import { TreemapChartComponent } from "./treemap-chart/treemap-chart.component";
 
 @NgModule({
+  imports: [CommonModule, ChartsModule],
   declarations: [
-    BarChartHorizontalComponent,
-    BarVerticalChartComponent,
-    LineAreaChartComponent,
-    PieChartComponent
+    AreaChartComponent,
+    PieChartComponent,
+    BarChartComponent,
+    ColumnChartComponent,
+    LineChartComponent,
+    SankeyChartComponent,
+    TreemapChartComponent,
   ],
-  imports: [],
   exports: [
-    BarChartHorizontalComponent,
-    BarVerticalChartComponent,
-    LineAreaChartComponent,
-    PieChartComponent
-  ]
+    ChartsModule,
+    AreaChartComponent,
+    PieChartComponent,
+    BarChartComponent,
+    ColumnChartComponent,
+    LineChartComponent,
+    SankeyChartComponent,
+    TreemapChartComponent,
+  ],
 })
-export class ChartsModule {}
+export class DSChartsModule {}

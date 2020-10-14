@@ -1,5 +1,11 @@
-import { ChartConfig } from '../core/chart.model';
+export interface IPieChartData {
+  datas?: number[];
+  labels?: string[];
+}
 
-export interface IPieChartConfig extends ChartConfig  {
-  numberOfTicks: number;
+export class PieChartData implements IPieChartData {
+  constructor(public datas?: number[], public labels?: string[]) {
+    this.datas = [];
+    this.labels = [];
+  }
 }
