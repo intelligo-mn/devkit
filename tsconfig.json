@@ -50,6 +50,14 @@
       "utils": [
         "dist/utils/utils",
         "dist/utils"
+      ],
+      "pipes": [
+        "dist/pipes/pipes",
+        "dist/pipes"
+      ],
+      "directives": [
+        "dist/directives/directives",
+        "dist/directives"
       ]
     }
   },
