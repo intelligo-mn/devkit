@@ -1,0 +1,15 @@
+<div style="display: block;">
+  <ng-container *ngIf="datasets[0] && datasets[0].data">
+    <canvas
+      baseChart
+      chartType="line"
+      [legend]="true"
+      height="350"
+      [colors]="colors"
+      [datasets]="datasets"
+      [labels]="labels"
+      [options]="options"
+    >
+    </canvas>
+  </ng-container>
+</div>
