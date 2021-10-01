@@ -22,6 +22,10 @@
       "image-viewer": [
         "dist/image-viewer"
       ],
+      "countdown": [
+        "dist/countdown/countdown",
+        "dist/countdown"
+      ],
       "image-viewer/*": [
         "dist/image-viewer/*"
       ],
