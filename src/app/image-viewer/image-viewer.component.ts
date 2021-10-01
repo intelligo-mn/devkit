@@ -14,8 +14,8 @@ export class ImageViewerComponent implements OnInit {
   }
   title = 'ngx';
   images = [
-    'https://raw.githubusercontent.com/intelligo-systems/memorize/master/.github/home.jpg',
-    'https://raw.githubusercontent.com/intelligo-systems/memorize/master/.github/home.jpg'
+    'https://raw.githubusercontent.com/intelligo-mn/memorize/master/.github/home.jpg',
+    'https://raw.githubusercontent.com/intelligo-mn/memorize/master/.github/home.jpg'
   ];
 
   imageIndexOne = 0;
