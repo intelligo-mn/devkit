@@ -26,7 +26,7 @@ or translating any document here to your language. [Find more information in CON
 
 ## License
 
-> Copyright (C) 2019 Intelligo Systems.<br>
+> Copyright (C) 2019 Intelligo LLC.<br>
 > Ngx Angular components licensed under the [MIT](./LICENSE) license.<br>
 > (See the [LICENSE](./LICENSE) file for the whole license text.)
 
