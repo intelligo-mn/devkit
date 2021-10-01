@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [10.x, 12.x, 13.x]
+        node-version: [13.x, 14.x]
         
     steps:
     - uses: actions/checkout@v1
@@ -24,4 +24,4 @@ jobs:
           ${{ runner.os }}-node-  
     - run: npm install
     - run: npm install -g @angular/cli
-    - run: ng build event-manager
+    - run: ng build charts --prod
