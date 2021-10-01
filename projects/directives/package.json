@@ -4,7 +4,7 @@
   "private": false,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/intelligo-systems/ngx.git"
+    "url": "git+https://github.com/intelligo-mn/ngx.git"
   },
   "keywords": [
     "angular"
@@ -12,9 +12,9 @@
   "author": "Intelligo LLC",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/intelligo-systems/ngx/issues"
+    "url": "https://github.com/intelligo-mn/ngx/issues"
   },
-  "homepage": "https://github.com/intelligo-systems/ngx#readme",
+  "homepage": "https://github.com/intelligo-mn/ngx#readme",
   "peerDependencies": {
     "@angular/common": "^12.2.8",
     "@angular/core": "^12.2.8"
