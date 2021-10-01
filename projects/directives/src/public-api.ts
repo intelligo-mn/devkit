@@ -2,8 +2,7 @@
  * Public API Surface of directives
  */
 export * from './lib/directives.module';
-export * from './lib/count-down.directive';
-export * from './lib/count-down';
+export * from '../../countdown/src/lib/countdown.directive';
 export * from './lib/cyrillic-block.directive';
 export * from './lib/dropdown-anchor.directive';
 export * from './lib/dropdown-link.directive';

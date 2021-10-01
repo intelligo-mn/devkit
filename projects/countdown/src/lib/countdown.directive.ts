@@ -12,7 +12,7 @@ import {
   PLATFORM_ID,
   SimpleChanges,
 } from "@angular/core";
-import { CountDown, CountDownOptions } from "./count-down";
+import { CountDown, CountDownOptions } from "./countdown";
 
 @Directive({
   selector: "[countDown]",
