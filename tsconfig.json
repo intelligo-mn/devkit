@@ -41,6 +41,10 @@
       "multi-select/*": [
         "dist/multi-select/*"
       ],
+      "input-mask": [
+        "dist/input-mask/input-mask",
+        "dist/input-mask"
+      ],
       "event-manager": [
         "dist/event-manager"
       ],
