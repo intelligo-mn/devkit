@@ -9,7 +9,6 @@ export * from './lib/dropdown-link.directive';
 export * from './lib/dropdown.directive';
 export * from './lib/full-height.directive';
 export * from './lib/full-screen.directive';
-export * from './lib/input-mask.directive';
 export * from './lib/match-height.directive';
 export * from './lib/numbers.directive';
 export * from './lib/scroll-to.directive';
